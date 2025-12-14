@@ -151,7 +151,6 @@ def launch_gui():
 
     root = tk.Tk()
     root.title("File Sorter")
-    root.geometry("400x220")
     log_text = tk.Text(root, height=8, state="disabled")
     log_text.pack(fill="both", padx=10, pady=5)
 
@@ -177,6 +176,9 @@ def launch_gui():
         if path:
             BASE_DIR = Path(path)
 
+
+
+
     def start_sort():
         global BASE_DIR, USE_DATE_FOLDERS
 
@@ -185,10 +187,17 @@ def launch_gui():
             return
 
         USE_DATE_FOLDERS = date_var.get()
-        root.destroy()
-        sort_all_files()
+        
 
-    tk.Button(root, text="Select Folder", command=choose_base).pack(pady=10)
+        start_btn.config(state="disabled")
+
+        try:
+            sort_all_files()
+            messagebox.showinfo("Done", "Sorting complete!")
+        finally:
+            start_btn.config(state="normal")
+
+
 
     tk.Checkbutton(
         root,
@@ -196,10 +205,19 @@ def launch_gui():
         variable=date_var
     ).pack(pady=5)
 
-    tk.Button(root, text="Start Sorting", command=start_sort).pack(pady=15)
+
+    tk.Button(root, text="Select Folder", command=choose_base).pack(pady=10)
+    start_btn = tk.Button(root, text="Start Sorting", command=start_sort)
+    start_btn.pack(pady=15)
+
+    
 
     root.mainloop()
-
+    try:
+        root.update_idletasks()
+        root.minsize(root.winfo_width(), root.winfo_height())
+    except tk.TclError:
+        pass
 
 if __name__ == "__main__":
         launch_gui()

@@ -1,0 +1,7 @@
+# Ignore build/output folders
+dist/
+build/
+build/file_sorter/
+
+# (optional) ignore logs
+*.log
