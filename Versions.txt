@@ -1,0 +1,26 @@
+it can sort by month and category 
+
+(category --> months of the year)
+
+
+Additions before GUI For publishments:
+
+1. Option for just category for the user (no months)
+2. Options for the user to fill the custom Path to sort all the messy item 
+3.Have a temporary GUI while providing the 2
+
+
+
+Version 0.2 
+
+1. it has temporary GUI
+2. I give it a 2 options (Month and YEar or no M&Y)
+3. a cosnole (failed)
+4.Build it up into EXE
+
+
+Additonal:
+
+fix the console 
+fix the GUI
+maybe learn optimization because it takes a bit longer to lunch it which is weird
