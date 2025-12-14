@@ -1,7 +1,10 @@
 # Ignore build/output folders
 dist/
 build/
-build/file_sorter/
+build/file_sorter
 
 # (optional) ignore logs
 *.log
+/build/file_sorter
+/build/file_sorter
+/build
